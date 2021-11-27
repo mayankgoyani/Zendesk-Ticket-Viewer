@@ -1,0 +1,86 @@
+<%- include ('partials/header') %>
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col col-md-9">
+
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <% if(page> 1) {%>
+                            <button class="btn btn-primary " onclick="window.location.href='/ticket?page=<%= parseInt(page)-1%>'">
+                                Previous Page</button>
+                            <% }%>
+                    </div>
+                    
+                    <div class="text-center pages col-md-8"> Showing <%= (((page-1)*25) + 1) %> - <%=(totalItems < (page*25))? totalItems: page*25 %>
+                                Tickets</div>
+
+                    <div class="col-md-2 text-center">
+                        <% if(page < total_pages) {%>
+
+                            <button class="btn btn-primary"
+                                onclick="window.location.href='/ticket?page=<%= parseInt(page)+1%>'">
+                                Next Page</button>
+                            <% }%>
+
+                    </div>
+                </div>
+                <br>
+
+
+                <% results.forEach(function(result){ %>
+
+                    <div class="sub row">
+                        <div class="col-md-10">
+                            <div class="font-color">
+                                <span class="bold">Ticket id:</span>
+                                <%= result.id %>
+
+                            </div>
+                            <br>
+                            <div class="font-color">
+                                <span class="bold">Subject:</span>
+                                <%= result.subject %>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2"><button type="button" class="btn btn-light"
+                                onclick="window.location.href='/ticket/<%= result.id %>'">More Details</button></div>
+
+                    </div>
+
+
+                    <% }); %>
+
+            </div>
+            <div class=" col">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="container">
+
+
+    <div class="row">
+        <% results.forEach(function(result){ %>
+            <div class="sm-col-3">
+                <div class="caption"><a href="">
+                        <%= result.subject %>
+                    </a></div>
+            </div>
+
+
+            <% }); %>
+
+    </div>
+</div> -->
+    <%- include ('partials/footer') %>

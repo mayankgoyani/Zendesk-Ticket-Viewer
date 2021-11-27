@@ -1,0 +1,73 @@
+<%- include ('partials/header') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col col-md-9">
+                <h4>Ticket Details</h4>
+                <div class="d-flex flex-row-reverse"><button type="button" class="btn btn-primary"
+                        onclick="window.location.href='/ticket'">Back</button>
+                </div>
+                <br>
+                <div class="details row">
+                    <div class="col-md-10">
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">Ticket id:</span>
+                            <%= result[0].id %>
+
+                        </div>
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">Subject:</span>
+                            <%= result[0].subject %>
+
+                        </div>
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">Description:</span>
+                            <%= result[0].description %>
+
+                        </div>
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">Created At:</span>
+                            <%= result[0].created_at %>
+
+                        </div>
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">status:</span>
+                            <%= result[0].status %>
+
+                        </div>
+                        <br>
+                        <div class="font-color">
+                            <span class="bold">Tags:
+                            </span>
+                            
+                                <% result[0].tags.forEach(results=>{ %>
+                                    <span>#<%= results%>
+                                    </span>
+                                    <%})%>
+                            
+                        </div>
+                        <br>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class=" col">
+
+            </div>
+        </div>
+    </div>
+
+
+    <%- include ('partials/footer') %>

@@ -23,7 +23,7 @@ REMOTEURI="zendeskSubdomain.zendesk.com/api/v2"
 ```javascript
     npm test
 ```
-7. If all test works start the server using followinf command
+7. If all test cases works start the server using followinf command
 
 ```javascript
     npm start

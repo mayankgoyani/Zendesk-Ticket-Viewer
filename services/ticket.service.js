@@ -21,7 +21,7 @@ paginator = (items, page) => {
     };
 }
 
-// console.log(process.env.EMAIL);
+
 var client = zendesk.createClient({
     username: process.env.EMAIL,
     token: process.env.ZENDESKTOKEN,
@@ -66,7 +66,7 @@ service.getTickets = (req, res, next) => {
 }
 
 service.getTicket = (req, res, next) => {
-    // console.log(req.params.id);
+
     try {
         client.search.query(req.params.id, function (err, req, result) {
             if (err) {
